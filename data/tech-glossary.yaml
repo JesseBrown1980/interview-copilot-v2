@@ -1,0 +1,146 @@
+# tech-glossary.yaml
+#
+# Seed glossary for Google Cloud Translation v3 custom glossary uploads.
+# Used by translator.py to keep federation jargon, brand names, and
+# Portuguese-Brazilian technical idioms stable across translations.
+#
+# Schema (per-entry):
+#   term            : canonical surface form (the source we expect to encounter)
+#   translations    : map of target-locale -> preferred rendering
+#                     ("noop" means: do NOT translate; pass through literally)
+#   case_sensitive  : if true, only matches exact case (default false)
+#   notes           : reviewer hint, not consumed by Translate v3
+#
+# Two locales are seeded: en-US (interview default) and pt-BR.
+# When uploading to Google Cloud, this YAML is materialised as an
+# equivalent-terms TSV (one row per (source, target) pair) and a
+# unidirectional glossary per language pair, per Translate v3 docs:
+#   https://cloud.google.com/translate/docs/advanced/glossary
+#
+# Operator-editable: append new entries at the end and re-run
+#   python -m src.translator --rebuild-glossary
+# to push to Google Cloud Storage and re-register with Translation API.
+
+version: 1
+last_updated: 2026-05-27
+locales: [en-US, pt-BR]
+
+entries:
+  # ---- Federation primitives (NEVER translate) ----
+  - term: Hookwall
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+    notes: federation primitive; brand-like, leave untranslated
+
+  - term: BEHCS
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+    notes: acronym, never translate
+
+  - term: BEHCS-256
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: BEHCS-1024
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: HyperBEHCS
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Asolaria
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+    notes: project name
+
+  - term: Hermes
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Liris
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Plasmatoid
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: omnidispatcher
+    translations: { en-US: noop, pt-BR: noop }
+
+  - term: omnishannon
+    translations: { en-US: noop, pt-BR: noop }
+
+  - term: hilbert
+    translations: { en-US: Hilbert, pt-BR: Hilbert }
+    notes: proper noun, capitalise
+
+  # ---- Common interview ML/AI terms (stable rendering) ----
+  - term: prompt caching
+    translations: { en-US: prompt caching, pt-BR: cache de prompt }
+
+  - term: context window
+    translations: { en-US: context window, pt-BR: janela de contexto }
+
+  - term: streaming
+    translations: { en-US: streaming, pt-BR: streaming }
+    notes: loanword in pt-BR tech, do not translate to "transmissão"
+
+  - term: embedding
+    translations: { en-US: embedding, pt-BR: embedding }
+
+  - term: fine-tuning
+    translations: { en-US: fine-tuning, pt-BR: fine-tuning }
+
+  - term: tokenizer
+    translations: { en-US: tokenizer, pt-BR: tokenizador }
+
+  - term: throughput
+    translations: { en-US: throughput, pt-BR: throughput }
+
+  - term: latency
+    translations: { en-US: latency, pt-BR: latência }
+
+  - term: speech-to-text
+    translations: { en-US: speech-to-text, pt-BR: fala-para-texto }
+
+  - term: text-to-speech
+    translations: { en-US: text-to-speech, pt-BR: texto-para-fala }
+
+  # ---- Brazilian-Portuguese idioms operator may use mid-interview ----
+  - term: rede neural
+    translations: { en-US: neural network, pt-BR: rede neural }
+
+  - term: aprendizado de máquina
+    translations: { en-US: machine learning, pt-BR: aprendizado de máquina }
+
+  - term: aprendizado profundo
+    translations: { en-US: deep learning, pt-BR: aprendizado profundo }
+
+  - term: nuvem
+    translations: { en-US: cloud, pt-BR: nuvem }
+
+  - term: contêiner
+    translations: { en-US: container, pt-BR: contêiner }
+
+  # ---- Company / product names (always noop) ----
+  - term: Anthropic
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Claude
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Gemini
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: OpenAI
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true
+
+  - term: Google Cloud
+    translations: { en-US: noop, pt-BR: noop }
+    case_sensitive: true

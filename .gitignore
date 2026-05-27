@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test/coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+service-account.json
+.secrets/
+secrets/
+gcp-*.json
+google-credentials.json
+
+# PII — operator resume data NEVER pushed (regenerate via resume_extractor.py)
+data/resume-context.json
+data/personal-*.json
+
+# Generated outputs / session logs
+sessions/
+logs/
+*.log
+out/
+build-output/
+
+# Binary vendor files (large, regenerate locally)
+bin/whisper-cpp/
+bin/*.exe
+bin/*.dll
+bin/*.bin
+bin/*.onnx
+models/
+
+# Operator-specific config
+.local-config.json
+.operator-prefs.json

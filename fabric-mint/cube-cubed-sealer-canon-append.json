@@ -1,0 +1,67 @@
+{
+ "schema": "cube_cubed_sealer.canon.append.v1",
+ "append_kind": "PROF-mint-sub-mint-provenance",
+ "appended_at": "2026-05-27T00:00:00.000Z",
+ "appended_by": "B09-PROFMint",
+ "wave": "18-agent-wave-2026-05-27",
+ "status": "DESIGN-MINTED-PENDING-APEX-MINT",
+ "law_anchor": "ASOLARIA-FOUNDATION-V3-LAW-V39-LOAD-DIVISION-PID-2026-05-23",
+ "authority_window": {
+  "start": "2026-05-23",
+  "end": "2026-07-23",
+  "duration": "2-months",
+  "authorizer": "Special-OP within quintuple-cosign-4mo super-window"
+ },
+ "canon_entry": {
+  "prof_id": "PROF-INTERVIEW-COPILOT-001",
+  "prof_pid": "AGT-L3-ACER-INTERVIEW-COPILOT-001-H315E5-W150-P00-N00789",
+  "prof_hilbert": 789,
+  "prof_cohort": "cube_cubed_sealer",
+  "prof_cohort_index": 8,
+  "prof_xyz": [4, 10, 6],
+  "sealer_class": "session-bounded-mint-and-release",
+  "sealer_invariants": [
+   "every meeting opens with a fresh sub-PID L4 mint",
+   "every meeting closes with a sub-PID release via ghost-envelope-gc",
+   "no sub-PID survives meeting_end + ghost_envelope_gc cycle",
+   "hard 4h cutoff enforced even without explicit meeting_end",
+   "every transcript line and suggestion dual-emits to hookwall substrate-787",
+   "every suggestion classified by V43-PROFX-756 PPA classifier (proof/prediction/action)",
+   "operator overrides routed to V43-PROFX-759 honest-fail detector as training data",
+   "Special-OP authority binding valid only within 2026-05-23..2026-07-23 sub-window"
+  ],
+  "sub_mint_provenance": {
+   "parent_prof_pid": "AGT-L3-ACER-INTERVIEW-COPILOT-001-H315E5-W150-P00-N00789",
+   "sub_pid_format": "AGT-L4-ACER-INTERVIEW-SESSION-{meeting_id}-H{hex5}-W150-P{seq}-N{nonce}",
+   "sub_pid_level": 4,
+   "sub_pid_authority_inheritance": "inherits Special-OP from parent for meeting duration only",
+   "sub_pid_release_trigger": "meeting_end OR 4h-cutoff OR operator-explicit-release",
+   "sub_pid_release_mechanism": "ghost-envelope-gc per V43-PROFX-760"
+  },
+  "engineering_loop_freeze_respected": true,
+  "engineering_loop_freeze_evidence": {
+   "no_LAW_emission": true,
+   "no_HBPv1_canonical_chain_write": true,
+   "artifacts_only": [
+    "D:/interview/copilot-v2-2026-05-27/fabric-mint/prof-interview-copilot-001.cube.js",
+    "D:/interview/copilot-v2-2026-05-27/fabric-mint/v44-delta-interview-copilot.json",
+    "D:/interview/copilot-v2-2026-05-27/fabric-mint/cube-cubed-sealer-canon-append.json",
+    "C:/Users/acer/Asolaria/reports/interview-copilot-update-2026-05-27/copilot/agent-B09-prof-mint.md"
+   ],
+   "apex_promotion_path": "operator-click apex-mint -> CP_MINT unanimous-5 ceremony per LAW v3 -> canonical chain append -> HBPv1 row + .hbi + .sha256 + .hex sidecar trinity"
+  }
+ },
+ "sibling_canon_references": {
+  "v43_PROFX_voxels": "V43-PROFX-754..V43-PROFX-775 (22 sibling PROFs minted same day under 18-agent wave round-1)",
+  "v43_supervisor_voxels": "V43-SUP-776..V43-SUP-785 (10 needed-new supervisors)",
+  "v43_meta_voxel": "V43-WAVE-786-18AGENT-ROUND-ROBIN",
+  "v43_substrate_voxel": "V43-SUBSTRATE-787-35TB-DRIVE-HOOKWALL",
+  "v43_anchor_pid": "ASOLARIA-V43-ROUND-1-PROFX-SUPERVISORS-WAVE-SUBSTRATE-PID-2026-05-27"
+ },
+ "honest_gaps": [
+  "this canon append is design-only; canonical sealer-band registry (if it exists elsewhere) must be located and merged at apex-mint",
+  "no .hbp/.hbi/.sha256/.hex sidecar trinity emitted (engineering-loop freeze)",
+  "Hilbert index 789 sequential next-available; if A04 Abacus-AI-Citizen at 788 chooses to claim 789 too, this PROF re-bumps to 790+ at apex-mint",
+  "interview-copilot subsystem code under D:/interview/copilot-v2-2026-05-27/src/ may itself need to be CP_MINT-blessed before first live meeting"
+ ]
+}

@@ -1,0 +1,28 @@
+# Interview Copilot v2 — voice pipeline (agent B03) Python dependencies.
+# Pin upper bounds loosely; tighten after first integration run.
+
+# ---- Audio capture ----
+# WASAPI loopback (Windows) — captures system audio output.
+pyaudiowpatch>=0.2.12.5 ; sys_platform == "win32"
+# Cross-platform mic capture + non-Windows fallback for system audio.
+sounddevice>=0.4.6
+# Pure-C VAD (primary). The -wheels package provides prebuilt Windows wheels.
+webrtcvad-wheels>=2.0.14
+# Numeric utility for PCM <-> float32 conversion (whisper input).
+numpy>=1.26,<3.0
+
+# ---- STT primary (local whisper.cpp) ----
+# Python binding for whisper.cpp; bundles the native lib for Linux/macOS and
+# expects a vendored whisper.dll on Windows (see INSTALL.md).
+pywhispercpp>=1.2.0
+
+# ---- STT fallback (cloud) ----
+# Google Cloud Speech v2. Authenticated via GOOGLE_APPLICATION_CREDENTIALS.
+google-cloud-speech>=2.27.0
+
+# ---- Optional: silero-vad backend ----
+# Heavier but more accurate in noise; gated on cfg.vad_backend="silero".
+onnxruntime>=1.18 ; extra == "silero"
+
+# ---- Test-only ----
+# (stdlib unittest only — no pytest dependency required by B03 tests.)
